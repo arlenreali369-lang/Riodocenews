@@ -1,27 +1,93 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Rio Doce News - Norte e Noroeste Capixaba</title>
-    <meta name="description" content="O maior portal de notícias, agronegócio e investimentos do Norte e Noroeste do Espírito Santo.">
-    
-    <!-- Open Graph / Facebook / WhatsApp -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://riodocenews.com.br/">
-    <meta property="og:title" content="Rio Doce News - Informação e Progresso">
-    <meta property="og:description" content="Acompanhe as notícias de Colatina, Linhares e toda a região em tempo real.">
-    <meta property="og:image" content="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=1200&h=630&q=80">
 
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://riodocenews.com.br/">
-    <meta property="twitter:title" content="Rio Doce News - Informação e Progresso">
-    <meta property="twitter:description" content="Acompanhe as notícias de Colatina, Linhares e toda a região em tempo real.">
-    <meta property="twitter:image" content="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=1200&h=630&q=80">
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rio Doce News - O Jornal do Norte Capixaba</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .font-display { font-family: 'Playfair Display', serif; }
+    </style>
+</head>
+<body class="bg-[#FDFDFD] text-[#1A1A1A]">
+
+    <div class="bg-[#004a8d] text-white py-2 px-4 text-[10px] font-bold uppercase tracking-[0.2em] flex justify-between items-center">
+        <span id="data-atual"></span>
+        <span class="hidden sm:inline">COLATINA, ES - 28°C</span>
+    </div>
+
+    <header class="border-b border-zinc-200 py-8 bg-white sticky top-0 z-50 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <h1 class="font-display text-5xl md:text-7xl tracking-tighter leading-none mb-1">
+                RIO DOCE <span class="text-emerald-600">NEWS</span>
+            </h1>
+            <p class="font-serif italic text-sm text-zinc-500 tracking-widest uppercase">O Jornal do Norte Capixaba</p>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 py-12">
+        
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 mb-20">
+            <div class="lg:col-span-8">
+                <div class="relative aspect-[16/9] overflow-hidden rounded-2xl mb-6">
+                    <img src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=1200" class="w-full h-full object-cover" alt="Rio Doce">
+                </div>
+                <h2 class="font-display text-4xl md:text-6xl leading-none mb-4 uppercase">O FUTURO DO RIO DOCE: INVESTIMENTOS E SUSTENTABILIDADE</h2>
+                <p class="text-lg text-zinc-600">Novos projetos prometem transformar a economia regional nos próximos cinco anos, trazendo mais empregos e preservação ambiental para o Norte Capixaba.</p>
+            </div>
+
+            <div class="lg:col-span-4 bg-zinc-900 text-white p-8 rounded-2xl shadow-2xl h-fit">
+                <h3 class="font-bold text-2xl mb-4 text-emerald-400">EDITOR IA</h3>
+                <p class="text-zinc-400 text-sm mb-6">Digite um tema e nossa inteligência artificial criará uma notícia exclusiva para você.</p>
+                <input 
+                    type="text" 
+                    id="topicInput"
+                    placeholder="Ex: Colheita de café em Colatina..."
+                    class="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 mb-4 text-white focus:outline-none focus:border-emerald-500"
+                >
+                <button 
+                    onclick="alert('Funcionalidade de IA requer configuração de servidor. O layout foi carregado com sucesso!')"
+                    class="w-full bg-emerald-600 hover:bg-emerald-700 transition-colors py-3 rounded-lg font-black text-xs uppercase tracking-widest"
+                >
+                    GERAR NOTÍCIA AGORA
+                </button>
+            </div>
+        </div>
+
+        <section class="grid grid-cols-1 md:grid-cols-3 gap-12 border-t border-zinc-200 pt-12">
+            <article class="group cursor-pointer">
+                <img src="https://images.unsplash.com/photo-1500673922987-e212871fec22?w=500" class="aspect-[4/3] object-cover rounded-xl mb-4 grayscale group-hover:grayscale-0 transition-all" />
+                <h4 class="font-display text-2xl leading-tight mb-2 group-hover:text-emerald-600 uppercase">Agronegócio em Alta</h4>
+                <p class="text-zinc-500 text-sm">Noroeste capixaba bate recorde na produção de café conilon este ano.</p>
+            </article>
+
+            <article class="group cursor-pointer">
+                <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=500" class="aspect-[4/3] object-cover rounded-xl mb-4 grayscale group-hover:grayscale-0 transition-all" />
+                <h4 class="font-display text-2xl leading-tight mb-2 group-hover:text-emerald-600 uppercase">Turismo nas Montanhas</h4>
+                <p class="text-zinc-500 text-sm">Novas rotas de ecoturismo atraem visitantes para a região de Pancas.</p>
+            </article>
+
+            <article class="group cursor-pointer">
+                <img src="https://images.unsplash.com/photo-1444676632488-26a136c45b9b?w=500" class="aspect-[4/3] object-cover rounded-xl mb-4 grayscale group-hover:grayscale-0 transition-all" />
+                <h4 class="font-display text-2xl leading-tight mb-2 group-hover:text-emerald-600 uppercase">Infraestrutura em Foco</h4>
+                <p class="text-zinc-500 text-sm">Obras na BR-259 devem ser concluídas até o final do semestre.</p>
+            </article>
+        </section>
+    </main>
+
+    <footer class="bg-zinc-100 py-8 mt-20 border-t border-zinc-200">
+        <div class="max-w-7xl mx-auto px-4 text-center text-zinc-500 text-xs tracking-widest uppercase">
+            &copy; 2026 Rio Doce News - Informação de Qualidade para o Norte e Noroeste do ES
+        </div>
+    </footer>
+
+    <script>
+        // Atualiza a data automaticamente
+        const options = { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' };
+        document.getElementById('data-atual').innerText = new Date().toLocaleDateString('pt-BR', options).toUpperCase();
+    </script>
+</body>
 </html>
